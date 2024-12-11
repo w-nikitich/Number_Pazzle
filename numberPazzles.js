@@ -41,7 +41,6 @@ function numberPazzles(numbers) {
   numbers.forEach(number => {
     const strNumber = number.toString();
     const front = strNumber.substring(0, 2);
-    const back = strNumber.substring(strNumber.length - 2);
 
     if (usedNumbers.has(strNumber)) return;
 
@@ -62,5 +61,3 @@ function numberPazzles(numbers) {
   console.log('maxPazzle: '+ maxPazzleLine);
   return maxPazzleLine;
 }
-
-
