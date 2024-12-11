@@ -1,4 +1,5 @@
 const fileInput = document.getElementsByTagName('input')[0];
+const output = document.getElementsByClassName('output')[0];
 
 fileInput.addEventListener('change', function(event) {
    const file = event.target.files[0];
@@ -7,7 +8,8 @@ fileInput.addEventListener('change', function(event) {
     try {
       const numbers = reader.result;
       const formattedNumberArray = numbers.split(/[ ,;\n]+/);
-      numberPazzles(formattedNumberArray);
+      const result = numberPazzles(formattedNumberArray);
+      output.innerText = result;
     } catch (error) {
       alert('Something went wrong. Check if your TXT file contains numbers');
       console.log(error);
